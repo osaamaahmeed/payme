@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payme/core/theme/app_styles.dart';
 
 class CustomTextPrice extends StatelessWidget {
   const CustomTextPrice({super.key, required this.text, required this.price, this.total});
@@ -11,11 +12,13 @@ class CustomTextPrice extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: total!=null ? 24 : 18, fontWeight: total!=null ? FontWeight.w600 : FontWeight.w400),
+          style: total != null ? AppStyles.style24 : AppStyles.style18
+          // style: TextStyle(fontSize: total!=null ? 24 : 18, fontWeight: total!=null ? FontWeight.w600 : FontWeight.w400),
         ),
         Text(
           price,
-          style: TextStyle(fontSize: total!=null ? 24 : 18, fontWeight: total!=null ? FontWeight.w600 : FontWeight.w400),
+            style: total != null ? AppStyles.style24 : AppStyles.style18
+          // style: TextStyle(fontSize: total!=null ? 24 : 18, fontWeight: total!=null ? FontWeight.w600 : FontWeight.w400),
         ),
       ],
     );
