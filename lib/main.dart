@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payme/view/mycart_view.dart';
-
+import 'package:payme/features/checkout/view/my_cart_view.dart';
 void main () {
   runApp(const Payme());
 }
