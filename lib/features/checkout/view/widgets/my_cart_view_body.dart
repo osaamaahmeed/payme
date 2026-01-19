@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payme/features/checkout/repos/checkout_repo.dart';
+import 'package:payme/features/checkout/repos/checkout_repo_impl.dart';
 import 'package:payme/features/checkout/view/widgets/numbers_section.dart';
 import 'package:payme/features/checkout/view/widgets/payment_methods_section.dart';
+import 'package:payme/features/checkout/view/widgets/payment_option_bottom_sheet.dart';
+import 'package:payme/features/checkout/viewmodels/cubits/payment_cubit/payment_cubit.dart';
 import 'custom_button.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -30,7 +35,7 @@ class MyCartViewBody extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(
                   context: context,
-                  builder: (context) => const PaymentOptionsBottomSheet(),
+                  builder: (context) => BlocProvider(create: (context) => PaymentCubit(CheckoutRepoImpl()), child: const PaymentOptionsBottomSheet()),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -45,22 +50,4 @@ class MyCartViewBody extends StatelessWidget {
   }
 }
 
-class PaymentOptionsBottomSheet extends StatelessWidget {
-  const PaymentOptionsBottomSheet({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 32),
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.end,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const PaymentMethodsSection(),
-          const SizedBox(height: 16,),
-          Padding(padding: EdgeInsets.symmetric(horizontal: 20), child: const CustomButton(text: "Continue"))
-        ],
-      ),
-    );
-  }
-}
