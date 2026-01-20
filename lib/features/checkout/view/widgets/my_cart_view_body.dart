@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:payme/features/checkout/repos/checkout_repo.dart';
 import 'package:payme/features/checkout/repos/checkout_repo_impl.dart';
 import 'package:payme/features/checkout/view/widgets/numbers_section.dart';
-import 'package:payme/features/checkout/view/widgets/payment_methods_section.dart';
 import 'package:payme/features/checkout/view/widgets/payment_option_bottom_sheet.dart';
 import 'package:payme/features/checkout/viewmodels/cubits/payment_cubit/payment_cubit.dart';
 import 'custom_button.dart';

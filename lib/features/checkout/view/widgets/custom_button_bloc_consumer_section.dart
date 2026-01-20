@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:payme/core/utils/api_keys.dart';
-import 'package:payme/features/checkout/models/payment_intent_input_model.dart';
-import 'package:payme/features/checkout/models/paypal_amount_model.dart';
-import 'package:payme/features/checkout/models/paypal_items_list_model.dart';
-
 import '../../../../core/functions/get_transactions.dart';
 import '../../../../core/functions/paypal_payment_functions.dart';
 import '../../../../core/functions/stripe_payment_functions.dart';
 import '../../viewmodels/cubits/payment_cubit/payment_cubit.dart';
 import '../thank_you_view.dart';
 import 'custom_button.dart';
-import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 class CustomButtonBlocConsumerSection extends StatelessWidget {
   const CustomButtonBlocConsumerSection({super.key, required this.index});
