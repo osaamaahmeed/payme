@@ -10,9 +10,9 @@ A Flutter practice project for implementing **Stripe** and **PayPal** payment ga
 ## 📸 Screenshots
 
 <!-- Add your screenshots here -->
-| Cart View | Payment Methods | Payment Success |
-|-----------|----------------|-----------------|
-| ![Cart](screenshots/cart.png) | ![Payment](screenshots/payment.png) | ![Success](screenshots/success.png) |
+| Cart View | Payment Methods | Stripe Payment | PayPal Payment | Payment Success |
+|-----------|----------------|----------------|----------------|-----------------|
+| ![Cart](assets/screenshots/cart.jpg) | ![Payment Methods](assets/screenshots/paymentMethods.jpg) | ![Stripe](assets/screenshots/stripe.jpg) | ![PayPal](assets/screenshots/paypal.jpg) | ![Success](assets/screenshots/paymentSuccess.jpg) |
 
 ---
 
