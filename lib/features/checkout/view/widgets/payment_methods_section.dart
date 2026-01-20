@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:payme/features/checkout/view/widgets/custom_payment_container.dart';
 
 class PaymentMethodsSection extends StatefulWidget {
-  const PaymentMethodsSection({super.key});
-
+  const PaymentMethodsSection({super.key, this.updatePaymentOption});
+  final Function ({required int index})? updatePaymentOption;
   @override
   State<PaymentMethodsSection> createState() => _PaymentMethodsSectionState();
 }
@@ -21,6 +21,7 @@ class _PaymentMethodsSectionState extends State<PaymentMethodsSection> {
             onTap: () {
               setState(() {
                 selectedIndex = index;
+                widget.updatePaymentOption?.call(index: selectedIndex);
               });
             },
             child: CustomPaymentContainer(isSelected: selectedIndex == index, image: paymentMethods[index],),

@@ -7,9 +7,20 @@ import 'package:payme/features/checkout/viewmodels/cubits/payment_cubit/payment_
 import 'custom_button.dart';
 import 'custom_button_bloc_consumer_section.dart';
 
-class PaymentOptionsBottomSheet extends StatelessWidget {
+class PaymentOptionsBottomSheet extends StatefulWidget {
   const PaymentOptionsBottomSheet({super.key});
 
+  @override
+  State<PaymentOptionsBottomSheet> createState() => _PaymentOptionsBottomSheetState();
+}
+
+class _PaymentOptionsBottomSheetState extends State<PaymentOptionsBottomSheet> {
+  int index = 0;
+  void updatePaymentOption ({required int index}) {
+    setState(() {
+      this.index = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,11 +28,11 @@ class PaymentOptionsBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const PaymentMethodsSection(),
+          PaymentMethodsSection(updatePaymentOption: updatePaymentOption,),
           const SizedBox(height: 16),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButtonBlocConsumerSection(),
+            child: CustomButtonBlocConsumerSection(index: index,),
           ),
         ],
       ),
