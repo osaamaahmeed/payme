@@ -35,7 +35,10 @@ class MyCartViewBody extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(
                   context: context,
-                  builder: (context) => BlocProvider(create: (context) => PaymentCubit(CheckoutRepoImpl()), child: const PaymentOptionsBottomSheet()),
+                  builder: (context) => BlocProvider(
+                    create: (_) => PaymentCubit(CheckoutRepoImpl()),
+                    child: const PaymentOptionsBottomSheet(),
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -49,5 +52,3 @@ class MyCartViewBody extends StatelessWidget {
     );
   }
 }
-
-

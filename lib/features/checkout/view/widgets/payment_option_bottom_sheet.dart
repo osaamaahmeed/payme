@@ -15,7 +15,6 @@ class PaymentOptionsBottomSheet extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 32),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
         children: [
           const PaymentMethodsSection(),

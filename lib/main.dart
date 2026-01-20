@@ -19,6 +19,7 @@ class Payme extends StatelessWidget {
   }
 }
 
-// 1. [payment intent object] create payment intent (amount + currency [required])
-// 2. init payment sheet (payment intent client secret)
+// 1. [Payment Intent Model] create payment intent (amount + currency [required] + customer id [optional])
+// 1.2. [KeySecret] create EphemeralKey(StripeVersion, customerId)
+// 2. init payment sheet (merchantDisplayName, payment intent client secret, ephemeralKeySecret)
 // 3. present payment sheet
